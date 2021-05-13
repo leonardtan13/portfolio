@@ -1,4 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components';
+import background from './wallpaper.jpg';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -12,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./wallpaper.jpg");
+  background-image: url(${background});
   background-size: 1920px 1080px ;
   background-repeat: no-repeat;
   background-position: 0 -100px;
@@ -22,7 +23,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-`;
+`
 
 export default GlobalStyles;
 
@@ -49,4 +50,4 @@ width: 100%;
 }
 `;
 
-<GlobalStyles/>
+

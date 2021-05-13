@@ -1,9 +1,11 @@
-import TopBar from "./components/TopBar/TopBar"
+import GlobalStyles from "./GlobalStyles";
+
+
 
 function App() {
   return (
     <div className="App">
-      <TopBar />
+        <GlobalStyles/>
     </div>
   );
 }
