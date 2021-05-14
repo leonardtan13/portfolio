@@ -1,5 +1,6 @@
 import GlobalStyles from "./GlobalStyles";
 import NavBar from "./components/NavBar/NavBar";
+import VisualStudioCode from "./components/Apps/VisualStudioCode/VisualStudioCode";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
         <GlobalStyles/>
         <NavBar />
+        <VisualStudioCode />
     </div>
   );
 }

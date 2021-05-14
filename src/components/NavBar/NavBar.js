@@ -1,8 +1,18 @@
 import {Nav, NavBarItem, Link} from "./NavBar.styles";
 import {AiFillApple} from "react-icons/all";
-
+import {LINKEDINURL, GITHUBURL, EMAIL} from "../../Constants";
+import {format} from "date-fns";
+import {useEffect, useState} from "react";
 
 const NavBar = () => {
+    const [date, setDate] = useState(Date.now())
+
+    useEffect(() => {
+        setInterval(() => {
+            setDate(Date.now(), 60000);
+            return () => clearInterval();
+        }, []);
+    })
     return (
         <>
             <Nav>
@@ -11,8 +21,7 @@ const NavBar = () => {
                 </NavBarItem>
 
                 <NavBarItem >
-                    <Link
-                        href="https://www.linkedin.com/in/leonardtan13/"
+                    <Link href= {LINKEDINURL}
                         target={"_blank"}
                     >
                         Linkedin
@@ -21,11 +30,24 @@ const NavBar = () => {
 
                 <NavBarItem>
                     <Link
-                        href="https://github.com/leonardtan13"
+                        href= {GITHUBURL}
                         target={"_blank"}
                     >
                     Github
                     </Link>
+                </NavBarItem>
+
+                <NavBarItem>
+                    <Link
+                        href= {EMAIL}
+                        target={"_blank"}
+                    >
+                        Email
+                    </Link>
+                </NavBarItem>
+
+                <NavBarItem style={{marginLeft: "auto", flexShrink: 0}}>
+                    {format(date, 'eee d MMM h:mm aa')}
                 </NavBarItem>
             </Nav>
         </>
