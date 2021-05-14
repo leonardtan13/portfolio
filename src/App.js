@@ -9,6 +9,7 @@ function App() {
         <GlobalStyles/>
         <NavBar />
         <VisualStudioCode />
+
     </div>
   );
 }

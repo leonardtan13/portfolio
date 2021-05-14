@@ -1,27 +1,12 @@
-import { Rnd } from "react-rnd";
-import {useState} from "react";
-
+import Window from "../Window/Window";
 
 const VisualStudioCode = () => {
 
-    const [x, setX] = useState(100)
-    const [y, setY] = useState(100)
-
     return (
-        <>
-
-            <Rnd
-                position={{x: x, y: y}}
-                style={{"backgroundColor" : "white"}}
-                onDragStop={(e, d) => {
-                    setX(d.x)
-                    setY(d.y)
-                }}
-            >
-                Test
-            </Rnd>
-
-        </>
+        <Window>
+            <h1>Test</h1>
+            <h1>Test</h1>
+        </Window>
     )
 }
 
