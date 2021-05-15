@@ -23,7 +23,9 @@ const ExitFullIcon = ({ size }) => {
 
 const style = {
     "backgroundColor" : "white",
-    "borderRadius" : "7.5px"
+    "borderRadius" : "7.5px",
+    "display" : "flex",
+    "flex-direction": "column"
 }
 
 const TrafficLight = () => {
@@ -50,17 +52,29 @@ const Window = (props) => {
     const [x, setX] = useState(100)
     const [y, setY] = useState(100)
 
+
+    const [width, setWidth] = useState(640)
+    const [height, setHeight] = useState(400)
+
     return (
         <Rnd
             position={{x: x, y: y}}
-            size = {{ width: 500, height: 500}}
+            size = {{ width: width, height: height}}
             style={style}
             onDragStop={(e, d) => {
                 setX(d.x)
                 setY(d.y)
             }}
+            onResizeStop={(e, direction, ref) => {
+                setWidth(parseInt(ref.style.width))
+                setHeight(parseInt(ref.style.height))
+            }}
+            dragHandleClassName={"WindowBar"}
+            minWidth={400}
+            minHeight={200}
+            bounds={"window"}
         >
-            <WindowBar>
+            <WindowBar className={"WindowBar"}>
                 <TrafficLight />
             </WindowBar>
             {props.children}
