@@ -9,13 +9,12 @@ export const WindowBar = styled.div`
 `
 
 export const Button = styled.button`
-    background-color: red;
     border-radius: 50%;
-    margin: 0 7.5px 0 7.5px;
+    margin: 0 2px 0 7.5px;
     width: 14px;
     height: 14px;
     border: none;
     display: flex;
-    align-item: center;
+    align-items: center;
     justify-content: center;
 `
