@@ -1,5 +1,6 @@
 import Window from "../Window/Window";
-import {SideBar,DescriptionDiv, HolderDiv} from "./VisualStudioCode.styles";
+import {DescriptionDiv, SideBar, HolderDiv} from "./VisualStudioCode.styles";
+
 const VisualStudioCode = () => {
 
     return (
@@ -13,6 +14,7 @@ const VisualStudioCode = () => {
                     <h1>Hello</h1>
                 </DescriptionDiv>
             </HolderDiv>
+
         </Window>
     )
 }
