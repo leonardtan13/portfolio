@@ -25,7 +25,7 @@ const style = {
     "backgroundColor" : "white",
     "borderRadius" : "7.5px",
     "display" : "flex",
-    "flex-direction": "column"
+    "flexDirection": "column"
 }
 
 const TrafficLight = () => {
