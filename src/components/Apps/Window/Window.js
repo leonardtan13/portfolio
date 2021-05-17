@@ -1,6 +1,6 @@
 import { Rnd } from "react-rnd";
 import {useState} from "react";
-import {Button, WindowBar} from "./Window.styles";
+import {Button, WindowBar, TrafficLightDiv} from "./Window.styles";
 import {IoCloseOutline, FiMinus} from "react-icons/all";
 
 const ExitFullIcon = ({ size }) => {
@@ -26,12 +26,14 @@ const style = {
     "borderRadius" : "7.5px",
     "display" : "flex",
     "flexDirection": "column",
-    "overflow" : "hidden"
+    "overflow" : "hidden",
+    "position" : "absolute",
+    "boxShadow": "rgba(149, 157, 165, 0.2) 0px 8px 24px"
 }
 
 const TrafficLight = () => {
     return (
-        <>
+        <TrafficLightDiv>
             <Button style={{backgroundColor: "#ff6159"} }>
                 <IoCloseOutline size={11}/>
             </Button>
@@ -43,7 +45,7 @@ const TrafficLight = () => {
             <Button style={{backgroundColor: "#28c941"} }>
                 <ExitFullIcon size={6.5} />
             </Button>
-        </>
+        </TrafficLightDiv>
     )
 }
 

@@ -18,7 +18,7 @@ const Content = (props) => {
                     'aboutMe' : text
                 })
             })
-    })
+    }, [])
 
 
     return (
