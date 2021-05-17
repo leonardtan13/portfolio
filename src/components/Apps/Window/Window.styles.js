@@ -6,7 +6,7 @@ export const WindowBar = styled.div`
     top: 0;
     width: 100%;
     background-color: rgba(185, 185, 180, 0.5);
-    height: 20px;
+    height: 22px;
     border-radius: 7.5px 7.5px 0 0;
     align-items: center;
 `

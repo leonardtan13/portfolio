@@ -25,7 +25,8 @@ const style = {
     "backgroundColor" : "white",
     "borderRadius" : "7.5px",
     "display" : "flex",
-    "flexDirection": "column"
+    "flexDirection": "column",
+    "overflow" : "hidden"
 }
 
 const TrafficLight = () => {

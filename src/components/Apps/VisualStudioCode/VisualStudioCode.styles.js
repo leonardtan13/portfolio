@@ -21,6 +21,14 @@ export const DescriptionDiv = styled.div`
     background-color: white;
     height: 100%;
     border-radius: 0 0 7.5px 0;
+    flex-direction: column;
+    width: 100%;
+    overflow: scroll;
+    
+    h1, h2, p {
+        margin : 20px;
+    }
+    
 `
 
 export const SideBarItem = styled.button`
