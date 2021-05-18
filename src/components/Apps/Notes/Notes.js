@@ -8,23 +8,10 @@ const sideBarItems = ["About me", "Projects"]
 
 const Content = (props) => {
 
-    const [state, setState] = useState({})
-
-    useEffect( () => {
-        fetch(aboutMe)
-            .then(response => response.text())
-            .then(text => {
-                setState({
-                    'aboutMe' : text
-                })
-            })
-    }, [])
-
-
     return (
         <DescriptionDiv>
             <ReactMarkdown
-                children={state['aboutMe']}
+                children={props.data}
             />
         </DescriptionDiv>
     )
@@ -34,10 +21,21 @@ const Content = (props) => {
 const Notes = () => {
 
     const [selectedId, setSelectedId] = useState(0)
+    const [data, setData] = useState({})
+
+    useEffect( () => {
+        fetch(aboutMe)
+            .then(response => response.text())
+            .then(text => {
+                setData({
+                    'aboutMe' : text
+                })
+            })
+    }, [])
+
 
     const handleClick = (id) => {
         setSelectedId(id)
-
     }
 
     return (
@@ -54,7 +52,8 @@ const Notes = () => {
                         </SideBarItem>
                     })}
                 </SideBar>
-                <Content />
+
+                <Content data={data.aboutMe} />
             </HolderDiv>
 
         </Window>
