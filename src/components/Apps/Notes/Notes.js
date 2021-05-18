@@ -1,5 +1,5 @@
 import Window from "../Window/Window";
-import {DescriptionDiv, SideBar, HolderDiv, SideBarItem} from "./VisualStudioCode.styles";
+import {DescriptionDiv, SideBar, HolderDiv, SideBarItem} from "./Notes.styles";
 import {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
 import aboutMe from "../../../data/aboutMe.md"
@@ -31,7 +31,7 @@ const Content = (props) => {
 }
 
 
-const VisualStudioCode = () => {
+const Notes = () => {
 
     const [selectedId, setSelectedId] = useState(0)
 
@@ -61,4 +61,4 @@ const VisualStudioCode = () => {
     )
 }
 
-export default VisualStudioCode
+export default Notes

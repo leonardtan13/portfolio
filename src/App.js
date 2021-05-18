@@ -1,6 +1,6 @@
 import GlobalStyles from "./GlobalStyles";
 import NavBar from "./components/NavBar/NavBar";
-import VisualStudioCode from "./components/Apps/VisualStudioCode/VisualStudioCode";
+import Notes from "./components/Apps/Notes/Notes";
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <GlobalStyles/>
         <NavBar />
-        <VisualStudioCode />
+        <Notes />
 
     </div>
   );
