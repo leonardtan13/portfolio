@@ -1,6 +1,6 @@
 import {Nav, NavBarItem, Link} from "./NavBar.styles";
 import {AiFillApple} from "react-icons/all";
-import {LINKEDINURL, GITHUBURL, EMAIL} from "../../Constants";
+import {LINKEDINURL, GITHUBURL, EMAIL, RESUME} from "../../Constants";
 import {format} from "date-fns";
 import {useEffect, useState} from "react";
 
@@ -45,6 +45,16 @@ const NavBar = () => {
                         Email
                     </Link>
                 </NavBarItem>
+
+                <NavBarItem>
+                    <Link
+                        href= {RESUME}
+                        target={"_blank"}
+                    >
+                        Resume
+                    </Link>
+                </NavBarItem>
+
 
                 <NavBarItem style={{marginLeft: "auto", flexShrink: 0}}>
                     {format(date, 'eee d MMM h:mm aa')}
