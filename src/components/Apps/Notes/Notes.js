@@ -3,59 +3,83 @@ import {DescriptionDiv, SideBar, HolderDiv, SideBarItem} from "./Notes.styles";
 import {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
 import aboutMe from "../../../data/aboutMe.md"
+import experience from "../../../data/experience.md"
 
-const sideBarItems = ["About me", "Projects"]
+const sideBarItems = {
+    "aboutMe" : {
+        'name' : 'About me',
+        'md' : aboutMe
+    },
+    "experience" : {
+        'name' : 'Experience',
+        'md' : experience
+    }
+}
 
-const Content = (props) => {
-
+const Content = ({data}) => {
     return (
         <DescriptionDiv>
             <ReactMarkdown
-                children={props.data}
+                children={data}
             />
         </DescriptionDiv>
     )
 }
 
 
+
 const Notes = () => {
 
-    const [selectedId, setSelectedId] = useState(0)
+    const [selectedId, setSelectedId] = useState('aboutMe')
     const [data, setData] = useState({})
+
 
     useEffect( () => {
         fetch(aboutMe)
             .then(response => response.text())
             .then(text => {
-                setData({
-                    'aboutMe' : text
+                setData( prevState => {
+                    let data = {...prevState}
+                    data['aboutMe'] = text
+                    return data
                 })
             })
     }, [])
 
+    useEffect( () => {
+        fetch(experience)
+            .then(response => response.text())
+            .then(text => {
+                setData( (prevState) => {
+                    let data = {...prevState}
+                    data['experience'] = text
+                    return data
+                })
+            })
+    }, [])
 
     const handleClick = (id) => {
         setSelectedId(id)
     }
 
     return (
-        <Window>
+        <Window
+            width={800}
+        >
             <HolderDiv>
                 <SideBar>
-                    {sideBarItems.map((value, index) => {
+                    {Object.entries(sideBarItems).map( (value) => {
                         return <SideBarItem
-                            id={`sidebar-${index}`}
-                            selected={selectedId === index}
-                            onClick={() => handleClick(index)}
+                            selected = {selectedId === value[0]}
+                            onClick = { () => handleClick(value[0])}
                         >
-                            {value}
+                            {value[1]['name']}
                         </SideBarItem>
                     })}
                 </SideBar>
 
-                <Content data={data.aboutMe} />
+                <Content data={data[selectedId]}/>
             </HolderDiv>
-
         </Window>
     )
 }

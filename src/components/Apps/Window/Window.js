@@ -52,12 +52,14 @@ const TrafficLight = () => {
 
 const Window = (props) => {
 
-    const [x, setX] = useState(100)
-    const [y, setY] = useState(100)
+    const maxW = window.innerWidth - 100
+    const maxH = window.innerHeight - 100
 
+    const [width, setWidth] = useState(Math.min(maxW, props.width ? props.width : 640))
+    const [height, setHeight] = useState(Math.min(maxH, props.height ? props.height : 480))
 
-    const [width, setWidth] = useState(640)
-    const [height, setHeight] = useState(400)
+    const [x, setX] = useState(Math.random() * (maxW - width))
+    const [y, setY] = useState(Math.max(50, Math.random() * (maxH - height)))
 
     return (
         <Rnd
