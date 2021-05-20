@@ -1,6 +1,6 @@
 # Leonard's portfolio
 
-This was developed using React, and deployed using Netlify
+This was developed using React, and deployed using Netlify <br>
 View it [here](leonardtgm.netlify.app)
 
 ### Small thoughts
