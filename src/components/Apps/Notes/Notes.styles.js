@@ -26,7 +26,7 @@ export const DescriptionDiv = styled.div`
     width: 100%;
     overflow: scroll;
    
-    h1, h3, p{
+    h1, h2, h3, p{
         padding: 5px 40px 5px 40px;
         max-width: 600px;
         line-height: 1.5;
@@ -48,9 +48,10 @@ export const DescriptionDiv = styled.div`
         padding-bottom: 100px;
     }
     
-    h1: first-child {
+    h1, h2: first-child {
         padding-top: 2rem;
     }
+
     
 `
 
