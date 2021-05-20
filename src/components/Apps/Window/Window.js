@@ -1,6 +1,6 @@
 import { Rnd } from "react-rnd";
 import {useState} from "react";
-import {Button, WindowBar, TrafficLightDiv} from "./Window.styles";
+import {Button, WindowBar, TrafficLightDiv, WindowBarTitle} from "./Window.styles";
 import {IoCloseOutline, FiMinus} from "react-icons/all";
 
 const ExitFullIcon = ({ size }) => {
@@ -81,6 +81,7 @@ const Window = (props) => {
         >
             <WindowBar className={"WindowBar"}>
                 <TrafficLight />
+                <WindowBarTitle ><strong>{props.title}</strong></WindowBarTitle>
             </WindowBar>
             {props.children}
         </Rnd>

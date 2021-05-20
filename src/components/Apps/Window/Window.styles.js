@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const WindowBar = styled.div`
-    display: block;
+    display: flex;
     position: sticky;
     top: 0;
     width: 100%;
@@ -24,7 +24,14 @@ export const Button = styled.button`
 
 export const TrafficLightDiv = styled.div`
     display: flex;
-    margin-top: 0.25rem;
     height: 1.5rem;
     position: relative;
+    align-items: center;
+`
+
+export const WindowBarTitle = styled.div`
+    display:flex;
+    position: relative;
+    margin: auto;
+    left: -35px;
 `

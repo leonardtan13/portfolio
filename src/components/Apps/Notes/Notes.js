@@ -65,6 +65,7 @@ const Notes = () => {
     return (
         <Window
             width={800}
+            title={`Notes`}
         >
             <HolderDiv>
                 <SideBar>
