@@ -25,8 +25,12 @@ export const DescriptionDiv = styled.div`
     flex-direction: column;
     width: 100%;
     overflow: scroll;
+
+    h2 {
+        font-family: Proxima Nova;
+    }
    
-    h1, h2, h3, p{
+    h1, h2, h3, h4, p{
         padding: 5px 40px 5px 40px;
         max-width: 600px;
         line-height: 1.5;

@@ -1,3 +1,33 @@
+## Quantitative Developer Summer Analyst @ Credit Suisse
+
+*May 2021 - July 2021*
+### Company background
+Global investment bank and financial services firm. 
+
+I was part of the Advanced Execution Systems (AES) Quant team. The team focuses on utilizing Machine Learning
+models to improve electronic trading performance.
+
+### What I did
+
+#### Model Status Dashboard 
+Design and developed a model training status monitoring dashboard for production. 
+The team uses cron jobs to extract data and train models. Statuses of these cron jobs are logged on production servers
+and rarely accessed. Thus, when errors occur, the team is not notified. 
+
+To improve monitoring capabilities, I built a full-stack application with **React** and **Flask** to allow the team to view the status of their cron jobs. 
+
+#### Stock Regression Analysis
+As we provide electronic trading services for external clients, we want to determine if the price movement is due to our order taking up too much liquidity, or is due to whole market movements. 
+
+Using the market model concept, I used close price data for each stock, and regressed the stock returns against market returns to determine the Beta of that particular stock. Regression data will be used by the team to determine how unusual the price movements are.
+
+I used **Pandas** for this project
+
+#### Migration of integration testing files to Artifactory
+Previously, certain files are hardcoded in the team's TeamCity build agent that is used in testing. This causes the project to be tightly coupled with the TeamCity build agent.
+
+I published the files to Artifactory, then added the package as a **Maven** dependency for the project. This allows the project to pull the files at build time. This decoupled the build agent and the project, allowing the CI pipeline to be more robust.
+
 ## Full-stack software engineer intern @ CargoAi
 
 *December 2020 - March 2021*
