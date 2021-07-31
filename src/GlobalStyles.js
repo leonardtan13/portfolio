@@ -14,9 +14,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(${background});
-  background-size: 1920px 1080px ;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0 -100px;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 code {
